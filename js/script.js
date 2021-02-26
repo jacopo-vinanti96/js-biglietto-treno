@@ -37,15 +37,15 @@ if ( age < 18 ) {
 
 document.getElementById('user_age').innerHTML = "età: " + age + " anni";
 document.getElementById('user_distance').innerHTML = "Distanza: " + km + " km";
-document.getElementById('user_ncost').innerHTML = prezzoIntero + "    -";
+document.getElementById('user_ncost').innerHTML = prezzoIntero;
 
 if ( age < 18 ) {
-  document.getElementById('user_discount').innerHTML = scontoU18.toFixed(2) + "    =";
+  document.getElementById('user_discount').innerHTML = scontoU18.toFixed(2);
   document.getElementById('user_fcost').innerHTML = prezzo.toFixed(2);
 } else if ( age >= 65  ) {
-  document.getElementById('user_discount').innerHTML = scontoO65.toFixed(2) + "    =";
+  document.getElementById('user_discount').innerHTML = scontoO65.toFixed(2);
   document.getElementById('user_fcost').innerHTML = prezzo.toFixed(2);
 } else {
-  document.getElementById('user_discount').innerHTML = "0" + "    =";
+  document.getElementById('user_discount').innerHTML = "0";
   document.getElementById('user_fcost').innerHTML = prezzoIntero.toFixed(2);
 }
