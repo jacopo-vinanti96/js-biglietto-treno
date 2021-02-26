@@ -16,18 +16,36 @@ while ( isNaN(age) ) {
 }
 
 //Calcolo valori di sconto e prezzo
-var prezzo = ( km * 0.21 ),
+var prezzoIntero = ( km * 0.21 ),
     scontoU18 = (  km * 0.21 * 0.20 ),
     scontoO65 = (  km * 0.21 * 0.40);
 
 //Calcolo prezzo scontato
 if ( age < 18 ) {
-  prezzo = prezzo - scontoU18;
+  prezzo = prezzoIntero - scontoU18;
   alert("il passeggero ha diritto a uno sconto del 20%");
+  alert( "Il prezzo del biglietto è: " + prezzo.toFixed(2) + "€" );
 } else if ( age >= 65  ) {
-  prezzo = prezzo - scontoO65;
+  prezzo = prezzoIntero - scontoO65;
   alert("il passeggero ha diritto a uno sconto del 40%");
+  alert( "Il prezzo del biglietto è: " + prezzo.toFixed(2) + "€" );
+} else {
+  alert( "Il prezzo del biglietto è: " + prezzoIntero.toFixed(2) + "€" );
 }
 
 //Risultato a schermo
-alert( "Il prezzo del biglietto è: " + prezzo.toFixed(2) + "€" );
+
+document.getElementById('user_age').innerHTML = "età: " + age + " anni";
+document.getElementById('user_distance').innerHTML = "Distanza: " + km + " km";
+document.getElementById('user_ncost').innerHTML = prezzoIntero + "    -";
+
+if ( age < 18 ) {
+  document.getElementById('user_discount').innerHTML = scontoU18.toFixed(2) + "    =";
+  document.getElementById('user_fcost').innerHTML = prezzo.toFixed(2);
+} else if ( age >= 65  ) {
+  document.getElementById('user_discount').innerHTML = scontoO65.toFixed(2) + "    =";
+  document.getElementById('user_fcost').innerHTML = prezzo.toFixed(2);
+} else {
+  document.getElementById('user_discount').innerHTML = "0" + "    =";
+  document.getElementById('user_fcost').innerHTML = prezzoIntero.toFixed(2);
+}
