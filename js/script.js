@@ -2,10 +2,8 @@ var km = prompt("Inserisci la distanza (km) del percorso"), age = prompt("Inseri
 
 if ( age < 18 ) {
   prezzo = prezzo - scontoU18;
-}
-
-if ( age >= 65  ) {
+} else if ( age >= 65  ) {
   prezzo = prezzo - scontoO65;
+} else {
+  alert(prezzo + "€")
 }
-
-alert(prezzo + "€")
