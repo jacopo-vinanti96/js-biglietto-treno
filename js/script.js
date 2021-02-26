@@ -2,6 +2,7 @@
 //Dichiarazione e controllo variabile km inserita dall' utente
 var km = prompt("Inserisci la distanza (km) del percorso");
 
+//Dichiarando la variabile in while non ha più valore all' esterno
 while ( isNaN(km) ) {
   alert("La distanza inserita non è un valore numerico");
   var km = prompt("Inserisci la distanza (km) del percorso");
@@ -23,18 +24,20 @@ var prezzoIntero = ( km * 0.21 ),
 //Calcolo prezzo scontato
 if ( age < 18 ) {
   prezzo = prezzoIntero - scontoU18;
+  //Risulatato su schermo
   alert("il passeggero ha diritto a uno sconto del 20%");
   alert( "Il prezzo del biglietto è: " + prezzo.toFixed(2) + "€" );
 } else if ( age >= 65  ) {
   prezzo = prezzoIntero - scontoO65;
+  //Risulatato su schermo
   alert("il passeggero ha diritto a uno sconto del 40%");
   alert( "Il prezzo del biglietto è: " + prezzo.toFixed(2) + "€" );
 } else {
+  //Risulatato su schermo
   alert( "Il prezzo del biglietto è: " + prezzoIntero.toFixed(2) + "€" );
 }
 
-//Risultato a schermo
-
+//Riepilogo impaginato
 document.getElementById('user_age').innerHTML = "età: " + age + " anni";
 document.getElementById('user_distance').innerHTML = "Distanza: " + km + " km";
 document.getElementById('user_ncost').innerHTML = prezzoIntero;
