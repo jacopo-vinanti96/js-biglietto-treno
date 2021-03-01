@@ -1,18 +1,17 @@
 
 //Dichiarazione e controllo variabile km inserita dall' utente
 var km = prompt("Inserisci la distanza (km) del percorso");
-
 //Dichiarando la variabile in while non ha più valore all' esterno
-while ( isNaN(km) ) {
-  alert("La distanza inserita non è un valore numerico");
+while ( isNaN(km) || km < 0 ) {
+  alert("La distanza inserita non è valida");
   var km = prompt("Inserisci la distanza (km) del percorso");
 }
 
 //Dichiarazione e controllo variabile age inserita dall' utente
 var age = prompt("Inserisci l' età del passeggero");
 
-while ( isNaN(age) ) {
-  alert("L' età inserita non è un valore numerico");
+while ( isNaN(age) || age < 0 ) {
+  alert("L' età inserita non è valida");
   var age = prompt("Inserisci l' età del passeggero");
 }
 
